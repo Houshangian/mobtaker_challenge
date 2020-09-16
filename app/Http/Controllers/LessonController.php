@@ -65,7 +65,7 @@ class LessonController extends Controller
 
     public function delete($id)
     {
-        $lesson = Lesson::where(['id'=>$id])git;
+        $lesson = Lesson::where(['id'=>$id]);
 
         if (Gate::denies('superadmin')) {
             $lesson->where(['user_id'=>Auth()->user()->id]);
